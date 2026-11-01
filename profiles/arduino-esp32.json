@@ -24,7 +24,8 @@
     "lib_deps": [
       "m5stack/M5Unified@0.2.28",
       "m5stack/M5GFX@0.2.35"
-    ]
+    ],
+    "lib_ldf_mode": "deep+"
   },
   "flash": {
     "size_bytes": 8388608,
