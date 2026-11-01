@@ -3,10 +3,6 @@
 #include <cstdint>
 #include <functional>
 #include <string>
-// PlatformIO discovers these hardware libraries through the public adapter
-// header even when its implementation is compiled from an external submodule.
-#include <M5Unified.h>
-#include <BluetoothSerial.h>
 
 // Platform I/O only. No application protocol, sessions, UI or answer semantics.
 namespace gar::stickc_plus2 {
