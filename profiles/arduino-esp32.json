@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "board": "m5stickc-plus2",
+  "kind": "platformio",
+  "os": "Arduino / ESP-IDF FreeRTOS",
+  "architecture": "xtensa-esp32",
+  "startup": {
+    "init": "arduino"
+  },
+  "platformio": {
+    "core_version": "6.1.19",
+    "platform": "espressif32@6.9.0",
+    "board": "m5stick-c",
+    "framework": "arduino",
+    "board_build.partitions": "huge_app.csv",
+    "monitor_speed": "115200",
+    "upload_speed": "921600",
+    "build_unflags": "-std=gnu++11",
+    "build_flags": [
+      "-DBOARD_HAS_PSRAM",
+      "-mfix-esp32-psram-cache-issue",
+      "-DCORE_DEBUG_LEVEL=0"
+    ],
+    "lib_deps": [
+      "m5stack/M5Unified@0.2.28",
+      "m5stack/M5GFX@0.2.35"
+    ]
+  },
+  "flash": {
+    "size_bytes": 8388608,
+    "chip": "esp32"
+  },
+  "adapter": {
+    "include": "arduino/include",
+    "source": "arduino/src/Platform.cpp"
+  },
+  "resources": {
+    "display": {
+      "id": "lcd",
+      "width": 135,
+      "height": 240,
+      "touch": false,
+      "controller": "ST7789V2",
+      "mosi": 15,
+      "sclk": 13,
+      "dc": 14,
+      "reset": 12,
+      "cs": 5,
+      "backlight": 27,
+      "orientation": "portrait"
+    },
+    "buttons": {
+      "A": 37,
+      "B": 39,
+      "C": 35
+    },
+    "power": {
+      "hold_gpio": 4,
+      "off_hold_ms": 6000
+    },
+    "usb": {
+      "baud": 115200
+    }
+  },
+  "verification": {
+    "date": "2026-11-01",
+    "source": "https://docs.m5stack.com/en/core/StickC-Plus2",
+    "scope": "Built-in LCD, buttons, power hold, flash and the existing M5Unified adapter only. Not a complete peripheral inventory. USB chip identity does not prove this board model."
+  }
+}
